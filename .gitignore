@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.idea/
+.vscode/
+*.swp
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Migrations (optional - if you prefer to recreate them)
+# **If you want to ignore migrations**
+# */migrations/
+# !*/migrations/__init__.py
+
+# Secrets
+.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Profiling
+profiler/
+
+# Build
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Staticfiles (when using collectstatic)
+static/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Other
+*.pot
+*.mo
+*.bak
+*.tmp
