@@ -22,7 +22,26 @@ class NotificationService:
         from .models import ReservationNotification
         ReservationNotification.objects.create(reservation=reservation, message=message)
 
-class PaymentService:
+class ReservationHistoryService:
+    @staticmethod
+    def get_user_reservation_history(user_id):
+        """
+        Retrieve reservation history for a specific user
+        """
+        return Reservation.objects.filter(
+            user_id=user_id
+        ).order_by('-created_at')
+        
+    @staticmethod
+    def get_property_reservation_history(property_id):
+        """
+        Retrieve reservation history for a specific property
+        """
+        return Reservation.objects.filter(
+            property_id=property_id
+        ).order_by('-created_at')
+
+class ReservationConfirmationService:
     @staticmethod
     def process_payment(reservation, payment_data):
         # Integracja z Stripe / BLIK etc.

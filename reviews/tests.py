@@ -11,7 +11,7 @@ User = get_user_model()
 class ReviewAPITest(APITestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='anna', password='secret')
-        self.prop = Property.objects.create(title='Dom', address='Kraków')
+        self.prop = Property.objects.create(title='Dom', address='Kraków', price=150.00)
         self.res = Reservation.objects.create(
             user=self.user, property=self.prop,
             start_date='2025-07-01', end_date='2025-07-03'

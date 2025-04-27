@@ -3,8 +3,10 @@ from .views import (
     PropertyListCreateAPIView, PropertyDetailAPIView,
     SpecialOfferListCreateAPIView, SpecialOfferDetailAPIView,
     ReservationListCreateAPIView, ReservationDetailAPIView, CancelReservationAPIView,
+    ReservationConfirmationAPIView, ReservationHistoryAPIView,
     # Dodaj tutaj pozostałe widoki: remind, extend, modify, support, raporty, analytics etc.
 )
+from .views import CheckAvailabilityAPIView
 
 urlpatterns = [
     path('properties/', PropertyListCreateAPIView.as_view(), name='property-list-create'),
@@ -16,5 +18,7 @@ urlpatterns = [
     path('', ReservationListCreateAPIView.as_view(), name='reservation-list-create'),
     path('<int:pk>/', ReservationDetailAPIView.as_view(), name='reservation-detail'),
     path('<int:pk>/cancel/', CancelReservationAPIView.as_view(), name='reservation-cancel'),
-    # Dodaj tutaj ścieżki do remind, extend, modify, support, occupancy, revenue, activity, preferences
+    path('<int:pk>/confirm/', ReservationConfirmationAPIView.as_view(), name='reservation-confirm'),
+    path('history/', ReservationHistoryAPIView.as_view(), name='reservation-history'),
+    path('availability/', CheckAvailabilityAPIView.as_view(), name='check-availability'),
 ]
