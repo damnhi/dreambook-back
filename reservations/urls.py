@@ -4,7 +4,6 @@ from .views import (
     SpecialOfferListCreateAPIView, SpecialOfferDetailAPIView,
     ReservationListCreateAPIView, ReservationDetailAPIView, CancelReservationAPIView,
     ReservationConfirmationAPIView, ReservationHistoryAPIView,
-    # Dodaj tutaj pozostałe widoki: remind, extend, modify, support, raporty, analytics etc.
 )
 from .views import CheckAvailabilityAPIView
 
