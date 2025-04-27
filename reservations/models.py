@@ -6,8 +6,6 @@ class Property(models.Model):
     title = models.CharField(max_length=200)
     address = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField()
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 class CancellationPolicy(models.Model):
     name = models.CharField(max_length=100)
